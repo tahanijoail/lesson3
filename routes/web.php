@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
-Route::get('/user/contact', [UserController::class, 'create']);
-Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +15,9 @@ Route::post('/user/store', [UserController::class, 'store'])->name('user.store')
 |
 */
 
-Route::get('/about', function () {
+Route::get('/', function () {
     return view('about');
 });
+
+Route::get('/user/contact', [UserController::class, 'create']);
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
